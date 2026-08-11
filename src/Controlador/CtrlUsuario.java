@@ -43,8 +43,8 @@ public class CtrlUsuario implements ActionListener {
         vista.txtNombre.setText("");
         vista.txtCorreo.setText("");
         vista.txtContraseña.setText("");
-        vista.txtRol.setText("");
-        vista.txtIdUsuario.requestFocus();
+        vista.comboRol.setSelectedIndex(0);
+         vista.txtIdUsuario.requestFocus();
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -55,7 +55,7 @@ public class CtrlUsuario implements ActionListener {
             modelo.setNombre(vista.txtNombre.getText());
             modelo.setCorreo(vista.txtCorreo.getText());
             modelo.setContraseña(vista.txtContraseña.getText());
-            modelo.setRol(vista.txtRol.getText());
+            modelo.setRol(vista.comboRol.getSelectedItem().toString());
 
             if (consultas.registrar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Usuario guardado correctamente");
@@ -72,7 +72,7 @@ public class CtrlUsuario implements ActionListener {
                 modelo.setNombre(vista.txtNombre.getText());
                 modelo.setCorreo(vista.txtCorreo.getText());
                 modelo.setContraseña(vista.txtContraseña.getText());
-                modelo.setRol(vista.txtRol.getText());
+                modelo.setRol(vista.comboRol.getSelectedItem().toString());
 
                 if (consultas.modificar(modelo)) {
                     JOptionPane.showMessageDialog(null, "Usuario modificado correctamente");
@@ -105,6 +105,7 @@ public class CtrlUsuario implements ActionListener {
 
         //buscar
         if (e.getSource() == vista.btnBuscar) {
+            vista.txtIdUsuario.setEnabled(true);
             try {
                 modelo.setIdUsuario(Integer.parseInt(vista.txtIdUsuario.getText()));
 
@@ -114,7 +115,7 @@ public class CtrlUsuario implements ActionListener {
                     vista.txtNombre.setText(modelo.getNombre());
                     vista.txtCorreo.setText(modelo.getCorreo());
                     vista.txtContraseña.setText(modelo.getContraseña());
-                    vista.txtRol.setText(modelo.getRol());
+                    vista.comboRol.setSelectedItem(modelo.getRol());
 
                 } else {
                     JOptionPane.showMessageDialog(null, "No se encontró el usuario");
@@ -128,6 +129,7 @@ public class CtrlUsuario implements ActionListener {
 
         //limpiar
         if (e.getSource() == vista.btnLimpiar) {
+            
             Limpiar();
         }
     }

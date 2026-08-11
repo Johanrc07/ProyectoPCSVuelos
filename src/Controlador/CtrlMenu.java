@@ -28,8 +28,8 @@ public class CtrlMenu implements ActionListener {
 
         this.vista.menuItemUsuarios.addActionListener(this);
         this.vista.menuItemClientes.addActionListener(this);
-    }
-
+        this.vista.btnSalir.addActionListener(this);
+}
     public void inicio() {
         vista.setTitle("AeroFly - Menú Principal");
         vista.setLocationRelativeTo(null);
@@ -59,9 +59,10 @@ public class CtrlMenu implements ActionListener {
 
             controlador.inicio();
         }
-        
-      
-        
+       
+        if (e.getSource() == vista.btnSalir) {
+            System.exit(0);
+        }
         
     }
 }
