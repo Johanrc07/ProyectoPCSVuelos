@@ -5,6 +5,7 @@
 package Controlador;
 
 import Modelo.*;
+import Vista.frmMenu;
 import Vista.frmLogin;
 import java.awt.event.*;
 import javax.swing.JOptionPane;
@@ -13,7 +14,6 @@ import javax.swing.JOptionPane;
  *
  * @author isabella
  */
-
 public class CtrlLogin implements ActionListener {
 
     private final Usuario modelo;
@@ -53,6 +53,13 @@ public class CtrlLogin implements ActionListener {
 
             if (consultas.validar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Inicio de sesión correcto");
+
+                frmMenu menu = new frmMenu();
+                menu.setLocationRelativeTo(null);
+                menu.setVisible(true);
+
+                vista.dispose();
+
             } else {
                 JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos");
             }
