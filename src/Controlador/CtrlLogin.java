@@ -52,9 +52,11 @@ public class CtrlLogin implements ActionListener {
             modelo.setContraseña(new String(vista.txtContraseña.getPassword()));
 
             if (consultas.validar(modelo)) {
+                System.out.println("ROL: " + modelo.getRol());
                 JOptionPane.showMessageDialog(null, "Inicio de sesión correcto");
 
                 frmMenu menu = new frmMenu();
+                menu.configurarMenu(modelo.getRol());
                 menu.setLocationRelativeTo(null);
                 menu.setVisible(true);
 
