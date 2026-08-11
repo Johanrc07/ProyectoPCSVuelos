@@ -324,7 +324,7 @@ public class frmCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    public static javax.swing.JPanel jPanel3;
     public static javax.swing.JTextField txtIdCliente;
     public static javax.swing.JTextField txtIdUsuario;
     public static javax.swing.JTextField txtPasaporte;

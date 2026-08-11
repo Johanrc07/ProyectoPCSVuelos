@@ -13,22 +13,22 @@ public class Usuario {
     private int idUsuario;
     private String nombre;
     private String correo;
-    private String contrasena;
+    private String contraseña;
     private String rol;
 
     public Usuario() {
         this.idUsuario = 0;
         this.nombre = "";
         this.correo = "";
-        this.contrasena = "";
+        this.contraseña = "";
         this.rol ="";
     }
 
-    public Usuario(int idUsuario, String nombre, String correo, String contrasena, String rol) {
+    public Usuario(int idUsuario, String nombre, String correo, String contraseña, String rol) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.correo = correo;
-        this.contrasena = contrasena;
+        this.contraseña = contraseña;
         this.rol = rol;
     }
 
@@ -56,12 +56,12 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public String getContrasena() {
-        return contrasena;
+    public String getContraseña() {
+        return contraseña;
     }
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     public String getRol() {
