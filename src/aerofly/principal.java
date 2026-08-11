@@ -13,10 +13,7 @@ public class principal {
 
     public static void main(String[] args) {
 
-       /* frmMenu vista = new frmMenu();
-        vista.setLocationRelativeTo(null);
-        vista.setVisible(true);*/
-       
+       // main ISABEL
        Usuario modelo = new Usuario();
         SentenciasUsuario consultas = new SentenciasUsuario();
         frmLogin vista = new frmLogin();
@@ -24,6 +21,21 @@ public class principal {
         CtrlLogin controlador = new CtrlLogin(modelo, consultas, vista);
 
         controlador.inicio();
+        
+        //******************************************************************
+        
+        
+        //MAIN JOHAN RODRIGUEZ
+        
+        
+        
+        
+        // MAIN JOHAN
+        
+        
+        
+        
+        //MAIN VICTOR
        
     }
 }
