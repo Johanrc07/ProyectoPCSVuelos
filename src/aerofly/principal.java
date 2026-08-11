@@ -4,32 +4,26 @@
  */
 package aerofly;
 
-import Modelo.*;
-import java.sql.*;
 import Modelo.Cliente;
 import Modelo.SentenciasCliente;
+import Vista.frmUsuario;
+import Vista.frmCliente;
+import Controlador.CtrlCliente;
 
-/**
- *
- * @author isabella
- */
 public class principal {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-         Cliente cliente = new Cliente();
 
-        cliente.setIdCliente(4);
+        Cliente modelo = new Cliente();
+        SentenciasCliente consultas = new SentenciasCliente();
+        frmCliente vista = new frmCliente();
 
-        SentenciasCliente sentencias = new SentenciasCliente();
+        CtrlCliente controlador = new CtrlCliente(modelo, consultas, vista);
 
-        if (sentencias.eliminar(cliente)) {
-            System.out.println("Cliente eliminado correctamente");
-        } else {
-            System.out.println("No se pudo eliminar el cliente");
-        }
+        controlador.inicio();
     }
 }
-     
+
+
+
+

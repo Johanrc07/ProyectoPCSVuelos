@@ -13,13 +13,13 @@ import java.sql.*;
 public class SentenciasUsuario extends Conexion {
 
     public boolean registrar(Usuario usu) {
-        String sql = "INSERT INTO usuario (nombre, correo, contrasena, rol) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO usuario (nombre, correo, contraseña, rol) VALUES (?,?,?,?)";
 
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, usu.getNombre());
             ps.setString(2, usu.getCorreo());
-            ps.setString(3, usu.getContrasena());
+            ps.setString(3, usu.getContraseña());
             ps.setString(4, usu.getRol());
 
             return ps.executeUpdate() > 0;
@@ -31,13 +31,13 @@ public class SentenciasUsuario extends Conexion {
     }
 
     public boolean modificar(Usuario usu) {
-        String sql = "UPDATE usuario SET nombre=?, correo=?, contrasena=?, rol=? WHERE idUsuario=?";
+        String sql = "UPDATE usuario SET nombre=?, correo=?, contraseña=?, rol=? WHERE idUsuario=?";
 
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, usu.getNombre());
             ps.setString(2, usu.getCorreo());
-            ps.setString(3, usu.getContrasena());
+            ps.setString(3, usu.getContraseña());
             ps.setString(4, usu.getRol());
             ps.setInt(5, usu.getIdUsuario());
 
@@ -77,7 +77,7 @@ public class SentenciasUsuario extends Conexion {
                     usu.setIdUsuario(rs.getInt("idUsuario"));
                     usu.setNombre(rs.getString("nombre"));
                     usu.setCorreo(rs.getString("correo"));
-                    usu.setContrasena(rs.getString("contrasena"));
+                    usu.setContraseña(rs.getString("contraseña"));
                     usu.setRol(rs.getString("rol"));
 
                     return true;
@@ -107,4 +107,33 @@ public class SentenciasUsuario extends Conexion {
         }
     }
 
+    public boolean validar(Usuario usu) {
+    String sql = "SELECT * FROM usuario WHERE correo=? AND contraseña=?";
+
+    try (Connection con = getConexion();
+         PreparedStatement ps = con.prepareStatement(sql)) {
+
+        ps.setString(1, usu.getCorreo());
+        ps.setString(2, usu.getContraseña());
+
+        try (ResultSet rs = ps.executeQuery()) {
+            if (rs.next()) {
+                usu.setIdUsuario(rs.getInt("idUsuario"));
+                usu.setNombre(rs.getString("nombre"));
+                usu.setCorreo(rs.getString("correo"));
+                usu.setContraseña(rs.getString("contraseña"));
+                usu.setRol(rs.getString("rol"));
+                return true;
+            }
+        }
+
+        return false;
+
+    } catch (SQLException e) {
+        System.err.println("Error al validar usuario: " + e);
+        return false;
+    }
+}
+    
+    
 }

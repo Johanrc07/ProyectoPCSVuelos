@@ -9,8 +9,8 @@ package Modelo;
  * @author isabella
  */
 public class Cliente {
-    
-        private int idCliente;
+
+    private int idCliente;
     private String pasaporte;
     private String telefono;
     private int idUsuario;
@@ -56,6 +56,5 @@ public class Cliente {
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
-
 
 }
