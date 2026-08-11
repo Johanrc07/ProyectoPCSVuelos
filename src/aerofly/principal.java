@@ -9,18 +9,15 @@ import Modelo.SentenciasCliente;
 import Vista.frmUsuario;
 import Vista.frmCliente;
 import Controlador.CtrlCliente;
+import Vista.frmMenu;
 
 public class principal {
 
     public static void main(String[] args) {
 
-        Cliente modelo = new Cliente();
-        SentenciasCliente consultas = new SentenciasCliente();
-        frmCliente vista = new frmCliente();
-
-        CtrlCliente controlador = new CtrlCliente(modelo, consultas, vista);
-
-        controlador.inicio();
+        frmMenu vista = new frmMenu();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
     }
 }
 
