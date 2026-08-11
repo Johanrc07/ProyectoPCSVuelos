@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+
 import Modelo.*;
 import Vista.frmMenu;
 import Vista.frmLogin;
@@ -21,7 +22,6 @@ public class CtrlLogin implements ActionListener {
     private final frmLogin vista;
 
     public CtrlLogin(Usuario modelo, SentenciasUsuario consultas, frmLogin vista) {
-
         this.modelo = modelo;
         this.consultas = consultas;
         this.vista = vista;
@@ -40,23 +40,23 @@ public class CtrlLogin implements ActionListener {
         vista.txtCorreo.setText("");
         vista.txtContraseña.setText("");
         vista.txtCorreo.requestFocus();
-
     }
 
     public void actionPerformed(ActionEvent e) {
 
-        //ingresar
+        // ingresar
         if (e.getSource() == vista.btnIngresar) {
 
             modelo.setCorreo(vista.txtCorreo.getText());
             modelo.setContraseña(new String(vista.txtContraseña.getPassword()));
 
             if (consultas.validar(modelo)) {
+
                 System.out.println("ROL: " + modelo.getRol());
+
                 JOptionPane.showMessageDialog(null, "Inicio de sesión correcto");
 
-               frmMenu menu = new frmMenu();
-
+                frmMenu menu = new frmMenu();
                 menu.configurarMenu(modelo.getRol());
 
                 CtrlMenu controladorMenu = new CtrlMenu(menu);
@@ -66,14 +66,12 @@ public class CtrlLogin implements ActionListener {
 
                 vista.dispose();
 
-                
-
             } else {
                 JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos");
             }
         }
 
-        //limpiar
+        // limpiar
         if (e.getSource() == vista.btnLimpiar) {
             Limpiar();
         }

@@ -130,7 +130,89 @@ public class CtrlUsuario implements ActionListener {
         //limpiar
         if (e.getSource() == vista.btnLimpiar) {
             
+
+
+        //guardar
+        if (e.getSource() == vista.btnGuardar) {
+
+            modelo.setNombre(vista.txtNombre.getText());
+            modelo.setCorreo(vista.txtCorreo.getText());
+            modelo.setContraseña(vista.txtContraseña.getText());
+            modelo.setRol(vista.comboRol.getSelectedItem().toString());
+
+            if (consultas.registrar(modelo)) {
+                JOptionPane.showMessageDialog(null, "Usuario guardado correctamente");
+                Limpiar();
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al guardar");
+            }
+        }
+
+        //modificar
+        if (e.getSource() == vista.btnModificar) {
+            try {
+                modelo.setIdUsuario(Integer.parseInt(vista.txtIdUsuario.getText()));
+                modelo.setNombre(vista.txtNombre.getText());
+                modelo.setCorreo(vista.txtCorreo.getText());
+                modelo.setContraseña(vista.txtContraseña.getText());
+                modelo.setRol(vista.comboRol.getSelectedItem().toString());
+
+                if (consultas.modificar(modelo)) {
+                    JOptionPane.showMessageDialog(null, "Usuario modificado correctamente");
+                    Limpiar();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al modificar");
+                }
+
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "El ID debe ser un número");
+            }
+        }
+
+        //eliminar
+        if (e.getSource() == vista.btnEliminar) {
+            try {
+                modelo.setIdUsuario(Integer.parseInt(vista.txtIdUsuario.getText()));
+
+                if (consultas.eliminar(modelo)) {
+                    JOptionPane.showMessageDialog(null, "Usuario eliminado correctamente");
+                    Limpiar();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al eliminar");
+                }
+
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Ingrese un ID válido");
+            }
+        }
+
+        //buscar
+        if (e.getSource() == vista.btnBuscar) {
+            try {
+                modelo.setIdUsuario(Integer.parseInt(vista.txtIdUsuario.getText()));
+
+                if (consultas.buscar(modelo)) {
+
+                    vista.txtIdUsuario.setText(String.valueOf(modelo.getIdUsuario()));
+                    vista.txtNombre.setText(modelo.getNombre());
+                    vista.txtCorreo.setText(modelo.getCorreo());
+                    vista.txtContraseña.setText(modelo.getContraseña());
+                    vista.comboRol.setSelectedItem(modelo.getRol());
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se encontró el usuario");
+                    Limpiar();
+                }
+
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Ingrese un ID válido");
+            }
+        }
+
+        //limpiar
+        if (e.getSource() == vista.btnLimpiar) {
+
             Limpiar();
         }
+    }
     }
 }
