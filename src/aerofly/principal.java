@@ -4,20 +4,27 @@
  */
 package aerofly;
 
-import Modelo.Cliente;
-import Modelo.SentenciasCliente;
-import Vista.frmUsuario;
-import Vista.frmCliente;
-import Controlador.CtrlCliente;
-import Vista.frmMenu;
+import Modelo.SentenciasUsuario;
+import Modelo.Usuario;
+import Vista.frmLogin;
+import Controlador.CtrlLogin;
 
 public class principal {
 
     public static void main(String[] args) {
 
-        frmMenu vista = new frmMenu();
+       /* frmMenu vista = new frmMenu();
         vista.setLocationRelativeTo(null);
-        vista.setVisible(true);
+        vista.setVisible(true);*/
+       
+       Usuario modelo = new Usuario();
+        SentenciasUsuario consultas = new SentenciasUsuario();
+        frmLogin vista = new frmLogin();
+
+        CtrlLogin controlador = new CtrlLogin(modelo, consultas, vista);
+
+        controlador.inicio();
+       
     }
 }
 

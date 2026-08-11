@@ -55,12 +55,18 @@ public class CtrlLogin implements ActionListener {
                 System.out.println("ROL: " + modelo.getRol());
                 JOptionPane.showMessageDialog(null, "Inicio de sesión correcto");
 
-                frmMenu menu = new frmMenu();
+               frmMenu menu = new frmMenu();
+
                 menu.configurarMenu(modelo.getRol());
+
+                CtrlMenu controladorMenu = new CtrlMenu(menu);
+
                 menu.setLocationRelativeTo(null);
                 menu.setVisible(true);
 
                 vista.dispose();
+
+                
 
             } else {
                 JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos");

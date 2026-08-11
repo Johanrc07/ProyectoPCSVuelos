@@ -15,7 +15,34 @@ public class frmMenu extends javax.swing.JFrame {
      */
     public frmMenu() {
         initComponents();
+        
     }
+        
+        public void configurarMenu(String rol) {
+
+    if (rol.equalsIgnoreCase("CLIENTE")) {
+        menuUsuarios.setVisible(false);
+        menuVuelos.setVisible(false);
+        menuReportes.setVisible(false);
+        menuReservas.setVisible(true);
+    }
+
+    if (rol.equalsIgnoreCase("COLABORADOR")) {
+        menuUsuarios.setVisible(false);
+        menuVuelos.setVisible(true);
+        menuReservas.setVisible(true);
+        menuReportes.setVisible(false);
+    }
+
+    if (rol.equalsIgnoreCase("ADMINISTRADOR")) {
+        menuUsuarios.setVisible(true);
+        menuVuelos.setVisible(true);
+        menuReservas.setVisible(true);
+        menuReportes.setVisible(true);
+    }
+        
+        }  
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,14 +58,14 @@ public class frmMenu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
+        menuInicio = new javax.swing.JMenu();
+        menuUsuarios = new javax.swing.JMenu();
+        menuItemUsuarios = new javax.swing.JMenuItem();
+        menuItemClientes = new javax.swing.JMenuItem();
+        menuVuelos = new javax.swing.JMenu();
+        menuReservas = new javax.swing.JMenu();
+        menuReportes = new javax.swing.JMenu();
+        menuSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu");
@@ -95,54 +122,54 @@ public class frmMenu extends javax.swing.JFrame {
         jMenuBar1.setMargin(new java.awt.Insets(20, 5, 0, 0));
         jMenuBar1.setName(""); // NOI18N
 
-        jMenu1.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu1.setText("Inicio");
-        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jMenu1.setMargin(new java.awt.Insets(20, 6, 3, 6));
-        jMenuBar1.add(jMenu1);
+        menuInicio.setForeground(new java.awt.Color(255, 255, 255));
+        menuInicio.setText("Inicio");
+        menuInicio.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        menuInicio.setMargin(new java.awt.Insets(20, 6, 3, 6));
+        jMenuBar1.add(menuInicio);
 
-        jMenu2.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu2.setText("Usuarios");
-        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        menuUsuarios.setForeground(new java.awt.Color(255, 255, 255));
+        menuUsuarios.setText("Usuarios");
+        menuUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
 
-        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jMenuItem1.setText("Usuarios");
-        jMenuItem1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        menuItemUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuItemUsuarios.setText("Usuarios");
+        menuItemUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        menuItemUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                menuItemUsuariosActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        menuUsuarios.add(menuItemUsuarios);
 
-        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jMenuItem2.setText("Clientes");
-        jMenuItem2.setHideActionText(true);
-        jMenuItem2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jMenuItem2.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jMenu2.add(jMenuItem2);
+        menuItemClientes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuItemClientes.setText("Clientes");
+        menuItemClientes.setHideActionText(true);
+        menuItemClientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuItemClientes.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        menuUsuarios.add(menuItemClientes);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(menuUsuarios);
 
-        jMenu3.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu3.setText("Vuelos");
-        jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jMenuBar1.add(jMenu3);
+        menuVuelos.setForeground(new java.awt.Color(255, 255, 255));
+        menuVuelos.setText("Vuelos");
+        menuVuelos.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jMenuBar1.add(menuVuelos);
 
-        jMenu4.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu4.setText("Reservas");
-        jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jMenuBar1.add(jMenu4);
+        menuReservas.setForeground(new java.awt.Color(255, 255, 255));
+        menuReservas.setText("Reservas");
+        menuReservas.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jMenuBar1.add(menuReservas);
 
-        jMenu5.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu5.setText("Reportes");
-        jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jMenuBar1.add(jMenu5);
+        menuReportes.setForeground(new java.awt.Color(255, 255, 255));
+        menuReportes.setText("Reportes");
+        menuReportes.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jMenuBar1.add(menuReportes);
 
-        jMenu6.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu6.setText("Salir");
-        jMenu6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jMenuBar1.add(jMenu6);
+        menuSalir.setForeground(new java.awt.Color(255, 255, 255));
+        menuSalir.setText("Salir");
+        menuSalir.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jMenuBar1.add(menuSalir);
 
         setJMenuBar(jMenuBar1);
 
@@ -164,9 +191,9 @@ public class frmMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void menuItemUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemUsuariosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_menuItemUsuariosActionPerformed
 
     private void formPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_formPropertyChange
         // TODO add your handling code here:
@@ -211,15 +238,15 @@ public class frmMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
+    public javax.swing.JMenu menuInicio;
+    public javax.swing.JMenuItem menuItemClientes;
+    public javax.swing.JMenuItem menuItemUsuarios;
+    public javax.swing.JMenu menuReportes;
+    public javax.swing.JMenu menuReservas;
+    public javax.swing.JMenu menuSalir;
+    public javax.swing.JMenu menuUsuarios;
+    public javax.swing.JMenu menuVuelos;
     // End of variables declaration//GEN-END:variables
 }
