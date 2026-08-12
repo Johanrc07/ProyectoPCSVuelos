@@ -38,12 +38,12 @@ public class frmUsuario extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
         txtContraseña = new javax.swing.JTextField();
-        txtRol = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
+        comboRol = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Control de Usuarios");
@@ -109,9 +109,6 @@ public class frmUsuario extends javax.swing.JFrame {
             }
         });
 
-        txtRol.setBackground(new java.awt.Color(227, 242, 253));
-        txtRol.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
         btnGuardar.setBackground(new java.awt.Color(1, 86, 192));
         btnGuardar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
@@ -170,6 +167,9 @@ public class frmUsuario extends javax.swing.JFrame {
             }
         });
 
+        comboRol.setBackground(new java.awt.Color(227, 242, 253));
+        comboRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---------------", "Cliente", "Colaborador", "Administrador", " " }));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -190,12 +190,6 @@ public class frmUsuario extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtRol)
-                        .addComponent(txtContraseña, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(txtCorreo, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(txtIdUsuario)
-                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -203,7 +197,13 @@ public class frmUsuario extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(comboRol, javax.swing.GroupLayout.Alignment.LEADING, 0, 385, Short.MAX_VALUE)
+                        .addComponent(txtContraseña)
+                        .addComponent(txtCorreo)
+                        .addComponent(txtIdUsuario, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)))
                 .addGap(31, 31, 31))
         );
         jPanel3Layout.setVerticalGroup(
@@ -226,10 +226,10 @@ public class frmUsuario extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(txtRol, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(63, 63, 63)
+                    .addComponent(comboRol, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(69, 69, 69)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -326,6 +326,7 @@ public class frmUsuario extends javax.swing.JFrame {
     public static javax.swing.JButton btnGuardar;
     public static javax.swing.JButton btnLimpiar;
     public static javax.swing.JButton btnModificar;
+    public javax.swing.JComboBox<String> comboRol;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -338,6 +339,5 @@ public class frmUsuario extends javax.swing.JFrame {
     public static javax.swing.JTextField txtCorreo;
     public static javax.swing.JTextField txtIdUsuario;
     public static javax.swing.JTextField txtNombre;
-    public static javax.swing.JTextField txtRol;
     // End of variables declaration//GEN-END:variables
 }

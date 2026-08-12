@@ -4,23 +4,39 @@
  */
 package aerofly;
 
-import Modelo.Cliente;
-import Modelo.SentenciasCliente;
-import Vista.frmUsuario;
-import Vista.frmCliente;
-import Controlador.CtrlCliente;
+import Modelo.SentenciasUsuario;
+import Modelo.Usuario;
+import Vista.frmLogin;
+import Controlador.CtrlLogin;
 
 public class principal {
 
     public static void main(String[] args) {
 
-        Cliente modelo = new Cliente();
-        SentenciasCliente consultas = new SentenciasCliente();
-        frmCliente vista = new frmCliente();
+       // main ISABEL
+       Usuario modelo = new Usuario();
+        SentenciasUsuario consultas = new SentenciasUsuario();
+        frmLogin vista = new frmLogin();
 
-        CtrlCliente controlador = new CtrlCliente(modelo, consultas, vista);
+        CtrlLogin controlador = new CtrlLogin(modelo, consultas, vista);
 
         controlador.inicio();
+        
+        //******************************************************************
+        
+        
+        //MAIN JOHAN RODRIGUEZ
+        
+        
+        
+        
+        // MAIN JOHAN
+        
+        
+        
+        
+        //MAIN VICTOR
+       
     }
 }
 

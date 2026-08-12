@@ -97,7 +97,6 @@ public class frmAsiento extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
-        jLabel13 = new javax.swing.JLabel();
 
         txtIdUsuario.setBackground(new java.awt.Color(227, 242, 253));
         txtIdUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -867,28 +866,15 @@ public class frmAsiento extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel13.setText("A");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(341, 341, 341)
-                    .addComponent(jLabel13)
-                    .addContainerGap(482, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(189, 189, 189)
-                    .addComponent(jLabel13)
-                    .addContainerGap(430, Short.MAX_VALUE)))
         );
 
         pack();
@@ -1087,7 +1073,7 @@ public class frmAsiento extends javax.swing.JFrame {
     public static javax.swing.JButton btnGuardar17;
     public static javax.swing.JButton btnGuardar18;
     public static javax.swing.JButton btnGuardar19;
-    public static javax.swing.JButton btnGuardar2;
+    public javax.swing.JButton btnGuardar2;
     public static javax.swing.JButton btnGuardar20;
     public static javax.swing.JButton btnGuardar21;
     public static javax.swing.JButton btnGuardar22;
@@ -1119,7 +1105,6 @@ public class frmAsiento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
